@@ -1,0 +1,204 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400&display=swap");
+
+/*********** CORES E VARIAVEIS DETERMINADAS ***********/
+:root {
+  /*********** MODO CLARO ***********/
+  --color-light-50: #f8fafc;
+
+  /*********** MODO DARK ***********/
+  --color-dark-50: #797984;
+  --color-dark-100: #312d37;
+  --color-dark-900: #000;
+
+  /*********** CORES UTILIZADAS ***********/
+  --color-purple-50: #7c3aed;
+  --color-purple-100: #a855f7;
+  --color-purple-200: #bf46ef;
+
+  /*********** css gradiente ***********/
+  --color-gradient: linear-gradient(
+    90deg,
+    var(--color-purple-50),
+    var(--color-purple-100),
+    var(--color-purple-200)
+  );
+}
+
+/*********** CONFIG GERAL ***********/
+* {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* config do container main */
+#container {
+  height: 100vh; /* escala da pagina x main */
+  width: 100%;
+  display: flex; /* travar main menu no meio da pagina - ou soltar */
+  justify-content: center; /* config main left-mid-right horizontal */
+  align-items: center; /* config main left-mid-right vertical */
+  background: rgb(238, 174, 202); /* cor fundogeral */
+  background: radial-gradient(
+    circle,
+    rgba(238, 174, 202, 1) 0%,
+    rgba(148, 187, 233, 1) 100%
+  );
+}
+/* button login */
+#login_form {
+  display: flex; /* travar button login no meio da pagina - ou soltar */
+  flex-direction: column; /* Muda posição/for */
+  height: fit-content;
+  background-color: var(--color-light-50); /* cor branca container */
+  padding: 30px 40px; /* Ajuste itens dentro x borda conteiner */
+  border-radius: 8px; /* Config borda */
+  gap: 30px; /* Tamanho vertical container */
+  box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.336); /* Shadow border container */
+  animation: dark-to-light-background 0.3s ease-in-out; /* Animacao transicao */
+}
+
+/*********** icon dark header ***********/
+#form_header {
+  display: flex; /* posicao icon dark */
+  align-items: center;
+  justify-content: space-between; /* SEPARA LOGIN - icon dark header */
+}
+/*********** position reader stats ***********/
+#form_header h1 {
+  font-size: 40px; /* tamanho fonte cadastro */
+  position: relative; /* posicao designer linha roxa embaixo cadastro*/
+}
+
+#form_header h1::before {
+  position: absolute; /* posicao designer linha roxa embaixo cadastro*/
+  content: "";
+  width: 40%; /* posicao designer linha roxa embaixo cadastro*/
+  height: 3px; /* posicao designer linha roxa embaixo cadastro*/
+  background-color: var(--color-purple-50); /* COR linha roxa embaixo cadastro*/
+  bottom: 10px; /* posicao embaixo ou em cima linha roxa cadastro*/
+  border-radius: 5px; /* borda linha roxa embaixo/em cima cadastro*/
+}
+
+#mode_icon {
+  cursor: pointer; /* designer passar mouse em cima */
+  font-size: 25px; /* tamanho icon dark theme */
+}
+
+/*********** Midias sociais ***********/
+#social_media {
+  display: flex; /* alinha no meio horizontal logos  */
+  justify-content: space-around; /* alinha no meio horizontal logos  */
+}
+/*********** Tamanho icones ***********/
+#social_media img {
+  width: 35px;
+}
+/*********** animacao passar mouse emcima icones ***********/
+#social_media img:hover {
+  transform: scale(1.4);
+}
+
+/*********** Campo Entrada usuarios ***********/
+#inputs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column; /*********** Menu na horizontal ou na vertical ***********/
+  gap: 20px;
+}
+
+.input-box > label {
+  font-size: 14px;
+  color: var(--color-dark-50);
+}
+
+.input-field {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 3px;
+  border-bottom: 1px solid var(--color-purple-50); /******* barrinhas roxas input *******/
+  cursor: text; /*********** Transforma mouse em text ao passar em cima ***********/
+}
+
+.input-field i {
+  font-size: 18px;
+  cursor: text;
+  color: var(--color-dark-900);
+}
+
+.input-field input {
+  border: none; /*********** Remove borda do campo de entrada ***********/
+  width: 260px; /*********** Altera tamanho tamanho main ***********/
+  background-color: transparent;
+  font-size: 18px;
+  padding: 0px 5px;
+}
+/*********** AO clicar remove borda ***********/
+.input-field input:focus {
+  outline: none;
+}
+
+/* Esqueceu a senha */
+#forgot_password a {
+  text-decoration: none; /*********** remove traco sublinhado ***********/
+  color: var(--color-dark-50);
+  font-size: 12px; /*********** tamanho fonte esqueceu senha ***********/
+}
+/*********** efeito animacao passar mouse em cima ***********/
+#forgot_password a:hover {
+  color: var(--color-purple-50); /* AO passar mouse em cima fica roxo */
+}
+
+/*********** BOTAO DE LOGIN ***********/
+#login_button {
+  border: none; /* remove a borda padrao */
+  background: rgb(238, 174, 202); /* cor gradiente do fundo botao */
+  background: radial-gradient(
+    circle,
+    rgba(238, 174, 202, 1) 22%,
+    rgba(148, 187, 233, 1) 100%
+  );
+  padding: 7px; /* tamanho horizontal botao */
+  border-radius: 3px; /* borda designer */
+  color: var(--color-light-50);
+  font-weight: bold; /* fonte negrito */
+  font-size: 18px; /* tamanho fonte cadastrar */
+  cursor: pointer; /* altera cursor */
+}
+
+#login_button:hover {
+  transform: scale(1.05); /* animacao ao passar mouse em cima */
+}
+
+/*********** DARK MODE ***********/
+.dark#login_form {
+  color: var(--color-light-50); /* AJUSTE CORES AO INVERTER */
+  background-color: var(--color-dark-100); /* COR DOS ITENS P INVERTER */
+  animation: light-to-dark-background 0.3s ease-in-out; /* ANIMACAO INVERTER */
+}
+
+.dark#login_form .input-field input,
+.dark#login_form .input-field i {
+  color: var(--color-light-50); /* AJUSTE ICONE */
+}
+/* ANIMACAO TRANSICAO CLARO -> ESCURO */
+/* ANIMACAO TRANSICAO RETORNO CLARO -> ESCURO */
+@keyframes dark-to-light-background {
+  0% {
+    background-color: var(--color-dark-100);
+  }
+  100.0% {
+    background-color: var(--color-light-50);
+  }
+}
+
+@keyframes light-to-dark-background {
+  0% {
+    background-color: var(--color-light-50);
+  }
+  100.0% {
+    background-color: var(--color-dark-100);
+  }
+}
